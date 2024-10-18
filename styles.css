@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    /* text-align: center; */
+    font-family: 'Comic Sans MS', 'Comic Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f6f6f6;
+    display: flex;
+}
+
+.container {
+    width: 340px;
+    border: 2px solid black;
+    background-color: lightgray;
+    margin: 8% auto;
+    border-radius: 8px;
+    padding-bottom: 10px;
+}
+
+.screen {
+    margin: 15px 17px;
+    padding: 15px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 8px;
+    font-weight: 100;
+}
+
+#calculation, .result {
+    text-align: end;
+    width: 100%;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    width: 65px;
+    height: 65px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button.last-btn {
+    width: 140px;
+    height: 60px;
+    border-radius: 30px
+}
+
+button:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease-in-out;
+}
+
+.clear-btn {
+    background-color: #ffaaaa;
+}
+
+.delete-btn {
+    background-color: #aaaaff;
+}
+
+.result {
+    min-height: 45px;
+    max-height: fit-content;
+    word-break: break-word;
+}
+
+button.number:hover {
+    background-color: #ddd;
+}
+
+button.operator:hover {
+    background-color: aqua;
+}
+
+button.equals-btn:hover {
+    background-color: #09f009;
+}
