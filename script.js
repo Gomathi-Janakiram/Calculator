@@ -8,7 +8,7 @@ const resultBox = document.querySelector(".result");
 const clearButton = document.querySelector(".clear-btn");
 const deleteButton = document.querySelector(".delete-btn");
 
-const operatorSymbols = ["+", "-", "/", "*", "%"];
+const operatorSymbols = ["+", "-", "/", "x", "%"];
 
 
 numbers.forEach((button) => 
@@ -73,16 +73,16 @@ const appendPeriod = () => {
 
 const evaluate = () => {
     if (inputScreen.textContent.includes("÷") && inputScreen.textContent.includes("x")) {
-        let calc = inputScreen.textContent.replace("÷", "/");
-        calc = calc.replace("x", "*");
+        let calc = inputScreen.textContent.replaceAll("÷", "/");
+        calc = calc.replaceAll("x", "*");
         return resultBox.textContent = eval(calc).toFixed(2)
     }
     if (inputScreen.textContent.includes("÷")) {
-        const calc = inputScreen.textContent.replace("÷", "/");
+        const calc = inputScreen.textContent.replaceAll("÷", "/");
         return resultBox.textContent = eval(calc).toFixed(2)
     }
     if (inputScreen.textContent.includes("x")) {
-        const calc = inputScreen.textContent.replace("x", "*");
+        const calc = inputScreen.textContent.replaceAll("x", "*");
         return resultBox.textContent = eval(calc);
     } else {
         const calc = inputScreen.textContent;
