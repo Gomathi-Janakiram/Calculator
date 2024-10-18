@@ -8,7 +8,7 @@ const resultBox = document.querySelector(".result");
 const clearButton = document.querySelector(".clear-btn");
 const deleteButton = document.querySelector(".delete-btn");
 
-const operatorSymbols = ["+", "-", "/", "x", "%"];
+const operatorSymbols = ["+", "-", "÷", "x", "%",];
 
 
 numbers.forEach((button) => 
@@ -29,15 +29,16 @@ deleteButton.addEventListener("click", () => deleteInputs())
 
 
 document.addEventListener("keydown", (e) => {
-    if (e.key >=0 && e.key <=9) {
+    const key = e.key == "/" ? "÷" : e.key == "*" ? e.key = "x" : e.key;
+    if (key >=0 && key <=9) {
         appendNumber(e.key)
-    } else if (operatorSymbols.includes(e.key)) {
-        appendNumber(e.key)
-    } else if (e.key == ".") {
+    } else if (operatorSymbols.includes(key)) {
+        appendNumber(key)
+    } else if (key == ".") {
         appendPeriod()
-    } else if (e.key == "=" || e.key == "Enter") {
+    } else if (key == "=" || key == "Enter") {
         evaluate()
-    } else if (e.key == "Backspace") {
+    } else if (key == "Backspace") {
         deleteInputs()
     }
 })
